@@ -3,7 +3,7 @@ import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/aut
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Importa AsyncStorage
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCJ8Pg_J4d4phftIv7DPwc83FAw38HMXU",
+  apiKey: "Apikey",
   authDomain: "ecoaprende-7640a.firebaseapp.com",
   projectId: "ecoaprende-7640a",
   storageBucket: "ecoaprende-7640a.appspot.com",
