@@ -20,11 +20,11 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.videoList}>
           <VideoItem 
             title="¿Qué es el medio ambiente?" 
-            imageSource={require('../assets/biodiversity_image.png')}
+            imageSource={require('../assets/climate_image.png')}
             onPress={() => navigation.navigate('Cambio Climático')}
           />
           <VideoItem 
-            imageSource={require('../assets/biodiversity_image.png')}
+            imageSource={require('../assets/recycle_image.webp')}
             title="Cómo el reciclaje ayuda al medio ambiente"
             onPress={() => navigation.navigate('Reciclaje')}
           />

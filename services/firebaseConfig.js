@@ -1,6 +1,8 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/auth";
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Importa AsyncStorage
+// firebaseConfig.js
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "Apikey",
@@ -12,12 +14,13 @@ const firebaseConfig = {
   measurementId: "G-98ZR659HL4"
 };
 
-// Inicializa Firebase
+
 const app = initializeApp(firebaseConfig);
 
-// Configura la persistencia de estado de autenticación con AsyncStorage
-const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage) // Usa AsyncStorage para persistencia
-});
 
+<<<<<<< Updated upstream
 export { auth };
+=======
+export const firestore = getFirestore(app);
+export const auth = getAuth(app);
+>>>>>>> Stashed changes
