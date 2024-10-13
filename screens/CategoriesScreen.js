@@ -7,31 +7,32 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <Text style={styles.headerText}>Categorías</Text>
+        <Text style={styles.headerText}>contenido</Text>
       </View>
 
       {/* Main Content */}
       <ScrollView style={styles.content}>
-        <Image
-          source={require('../assets/imgprincipal.webp')}
-          style={styles.mainImage}
-        />
-
+       
         <View style={styles.videoList}>
           <VideoItem 
-            title="¿Qué es el medio ambiente?" 
-            imageSource={require('../assets/climate_image.png')}
-            onPress={() => navigation.navigate('Cambio Climático')}
-          />
-          <VideoItem 
-            imageSource={require('../assets/recycle_image.webp')}
-            title="Cómo el reciclaje ayuda al medio ambiente"
+            imageSource={require('../assets/recipiente_contenido.jpg')}
+            title="¿Que es el reciclaje?"
             onPress={() => navigation.navigate('Reciclaje')}
           />
           <VideoItem 
-            title="Importancia de la biodiversidad"
-            imageSource={require('../assets/biodiversity_image.png')}
+            title="¿Qué es el Cambio Climático?" 
+            imageSource={require('../assets/climate_cambio.jpeg')}
+            onPress={() => navigation.navigate('Cambio Climático')}
+          />
+          <VideoItem 
+            title="Biodiversidad"
+            imageSource={require('../assets/biodiversity.jpg')}
             onPress={() => navigation.navigate('Biodiversidad')}
+          />
+            <VideoItem 
+            title="Videos"
+            imageSource={require('../assets/video.png')}
+            onPress={() => navigation.navigate('VideosScreen')}
           />
         </View>
       </ScrollView>
@@ -39,19 +40,27 @@ const HomeScreen = ({ navigation }) => {
       {/* Bottom Icons */}
       <View style={styles.bottomIconsContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.iconContainer}>
-          <Icon name="home" size={30} color="white" />
+          <Icon name="home" size={28} color="white" />
           <Text style={styles.iconText}>Inicio</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.iconContainer}>
-          <Icon name="list" size={30} color="white" />
-          <Text style={styles.iconText}>Categorías</Text>
+          <Icon name="list" size={28} color="white" />
+          <Text style={styles.iconText}>Contenido</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Reviews')} style={styles.iconContainer}>
-          <Icon name="star" size={30} color="white" />
+
+        <TouchableOpacity onPress={() => navigation.navigate('Game')} style={styles.iconContainer}>
+          <Icon name="game-controller-outline" size={28} color="white" />
+          <Text style={styles.iconText}>Jugar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Progreso')} style={styles.iconContainer}>
+          <Icon name="star" size={28} color="white" />
           <Text style={styles.iconText}>Progreso</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.iconContainer}>
-          <Icon name="person" size={30} color="white" />
+          <Icon name="person" size={28} color="white" />
           <Text style={styles.iconText}>Perfil</Text>
         </TouchableOpacity>
       </View>
@@ -61,22 +70,23 @@ const HomeScreen = ({ navigation }) => {
 
 const VideoItem = ({ title, imageSource, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.videoItem}>
-    <Image source={imageSource} style={styles.videoImage} />
     <View style={styles.videoTextContainer}>
       <Text style={styles.videoTitle}>{title}</Text>
     </View>
+    <Image source={imageSource} style={styles.videoImage} />
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#CAC2C3',
   },
   header: {
     padding: 16,
     borderBottomWidth: 1,
-    borderBottomColor: '#333',
+   backgroundColor:"#056C6B",
+    alignItems: 'left',
   },
   headerText: {
     fontSize: 24,
@@ -93,35 +103,32 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   videoList: {
-    marginTop: 20,
-    width: 200,
+    marginTop: 0,
   },
   videoItem: {
-    flexDirection: 'row',
     marginBottom: 15,
+    borderRadius: 10,
+ 
   },
   videoImage: {
-    width: 120, // Ajusta el ancho
-    height: 67.5, // Ajusta la altura manteniendo la relación de aspecto 16:9 (que es lo mismo que 160:90)
+    width: '100%',
+    height: 280,
     borderRadius: 10,
-    marginRight: 10,
-    resizeMode: 'contain', // Asegura que la imagen se ajuste sin recortarse
-    marginTop: 35,
+
   },
-  
   videoTextContainer: {
-    justifyContent: 'center',
+    padding: 15,
   },
   videoTitle: {
-    fontSize: 16,
-    color: '#fff',
+    fontSize: 18,
+    color: 'black',
     fontWeight: 'bold',
   },
   bottomIconsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 10,
-    backgroundColor: '#222',
+    backgroundColor: '#4DBEA2',
   },
   iconContainer: {
     alignItems: 'center',

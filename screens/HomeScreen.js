@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
-
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -12,30 +11,31 @@ const HomeScreen = ({ navigation }) => {
         <Text style={styles.headerText}>Inicio</Text>
       </View>
 
-      {/* Green Title */}
-      <Text style={styles.introTitle}>Bienvenido a EcoAprende</Text>
-
       {/* Main Content */}
       <ScrollView style={styles.content}>
+        {/* Green Title */}
+        <Text style={styles.introTitle}>Bienvenido a EcoAprende</Text>
+
         {/* Introductory Section */}
         <View style={styles.introContainer}>
           <Text style={styles.introText}>
-            En EcoAprende, creemos en la importancia de cuidar nuestro planeta. Aquí encontrarás información valiosa sobre cómo reciclar correctamente, reducir la contaminación, y adoptar prácticas sostenibles que contribuyan a un medio ambiente más limpio y saludable. ¡Únete a nosotros en este viaje hacia un futuro más verde!
+            Bienvenido a EcoAprende, tu aliado en el camino hacia un planeta más verde y saludable. Nuestro objetivo es ayudarte a entender y adoptar prácticas sostenibles que no solo benefician al medio ambiente, sino que también mejoran tu calidad de vida.
           </Text>
 
+          {/* GIF instead of Video */}
           <Image
-            source={require('../assets/image.jpg')}
-            style={styles.introImage}
+            source={require('../assets/logo gif.gif')}  // Ruta al archivo GIF
+            style={styles.introImage}                    // Estilos para el GIF
           />
 
           {/* Inspirational Phrase */}
-          <Animatable.Text 
+          <Animatable.Text
             animation="pulse"
-            easing="ease-in-out" 
-            iterationCount="infinite" 
+            easing="ease-in-out"
+            iterationCount="infinite"
             style={styles.inspirationText}
           >
-            ¡Sé el cambio que quieres ver en el mundo! Empieza hoy, recicla y cuida el planeta.
+            "Pequeñas acciones, grandes cambios. ¡Comienza hoy!"
           </Animatable.Text>
         </View>
       </ScrollView>
@@ -43,19 +43,27 @@ const HomeScreen = ({ navigation }) => {
       {/* Bottom Icons */}
       <View style={styles.bottomIconsContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.iconContainer}>
-          <Icon name="home" size={30} color="white" />
+          <Icon name="home" size={28} color="white" />
           <Text style={styles.iconText}>Inicio</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.iconContainer}>
-          <Icon name="list" size={30} color="white" />
-          <Text style={styles.iconText}>Categorías</Text>
+          <Icon name="list" size={28} color="white" />
+          <Text style={styles.iconText}>Contenido</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Reviews')} style={styles.iconContainer}>
-          <Icon name="star" size={30} color="white" />
+
+        <TouchableOpacity onPress={() => navigation.navigate('Game')} style={styles.iconContainer}>
+          <Icon name="game-controller-outline" size={28} color="white" />
+          <Text style={styles.iconText}>Jugar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Progreso')} style={styles.iconContainer}>
+          <Icon name="star" size={28} color="white" />
           <Text style={styles.iconText}>Progreso</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.iconContainer}>
-          <Icon name="person" size={30} color="white" />
+          <Icon name="person" size={28} color="white" />
           <Text style={styles.iconText}>Perfil</Text>
         </TouchableOpacity>
       </View>
@@ -66,71 +74,76 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#CAC2C3',
   },
   header: {
-    padding: 16,
+    padding: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#333',
+    backgroundColor: '#056C6B',
   },
   headerText: {
-    fontSize: 24,
+    fontSize: 26,
     color: '#fff',
     fontWeight: 'bold',
   },
   introTitle: {
-    fontSize: 22,
-    color: '#00FF7F',
+    fontSize: 24,
+    color: 'black',
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: 'center',
     marginTop: 30,
   },
   content: {
     flex: 1,
+    paddingHorizontal: 16,
   },
   introContainer: {
     marginTop: 20,
-    padding: 10,
-    backgroundColor: '#333',
-    borderRadius: 10,
-    height:580,
-    flex: 1,  // Ajusta el contenedor gris para ocupar más espacio verticalmente
+    padding: 15,
+   backgroundColor: 'rgba(310, 310, 310, 0.25)',  // 25% de opacidad
+    borderRadius: 15,
+    flex: 1,
   },
   introText: {
-    fontSize: 16,
-    color: 'white',
-    textAlign: "justify",
-    marginBottom: 10,
+    fontSize: 18,
+    color: 'black',
+    textAlign: 'justify',
+    marginBottom: 20,
   },
   introImage: {
     width: '100%',
-    height: 200,
-    marginTop:50,
-    borderRadius: 10,
+    height: 240,
+    marginTop: 10,
+    borderRadius: 20,
+      // Para que el GIF se ajuste sin distorsión
   },
   inspirationText: {
-    fontSize: 18,
-    color: 'white',
+    fontSize: 20,
+    color: 'black',
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 90,
+    marginTop: 20,
   },
   bottomIconsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 10,
-    backgroundColor: '#222',
+    paddingVertical: 15,
+    backgroundColor: '#4DBEA2',
+    borderTopWidth: 1,
+    borderTopColor: '#444',
   },
   iconContainer: {
     alignItems: 'center',
+    paddingVertical: 5,
+    
   },
   iconText: {
-    fontSize: 12,
+    fontSize: 13,
     color: 'white',
     marginTop: 4,
   },
 });
-
 
 export default HomeScreen;

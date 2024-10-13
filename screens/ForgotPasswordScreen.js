@@ -11,7 +11,7 @@ const ForgotPasswordScreen = () => {
   const handlePasswordReset = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        setMessage('Se ha enviado un correo electrónico para restablecer tu contraseña.');
+        setMessage('Se ha enviado un correo electrónico para restablecer tu contraseña.          En caso de no recibir el correo verifique en la forma que esta escrito');
         setError('');
       })
       .catch(error => {
@@ -29,7 +29,7 @@ const ForgotPasswordScreen = () => {
         onChangeText={setEmail}
         keyboardType="email-address"
         style={styles.input}
-        placeholderTextColor="#A0A0A0"
+        placeholderTextColor="white"
       />
       <TouchableOpacity onPress={handlePasswordReset} style={styles.button}>
         <Text style={styles.buttonText}>Enviar Correo de Recuperación</Text>
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#3C553E',
+    backgroundColor: '#CCCCCC',
   },
   title: {
     fontSize: 24,
-    color: '#FFFFFF',
+    color: 'black',
     marginBottom: 20,
   },
   input: {
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 16,
     color: '#FFFFFF',
+    backgroundColor: '#999999',
   },
   button: {
     width: '100%',
@@ -69,15 +70,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    backgroundColor: '#17B559',
+    backgroundColor: '#056C6B',
   },
   buttonText: {
-    color: 'black',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
   },
   message: {
-    color: 'green',
+    color: 'black',
     marginTop: 20,
   },
   error: {

@@ -58,22 +58,31 @@ const ProfileScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.bottomIconsContainer}>
+    {/* Bottom Icons */}
+    <View style={styles.bottomIconsContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.iconContainer}>
-          <Icon name="home" size={30} color="#000" />
+          <Icon name="home" size={28} color="white" />
           <Text style={styles.iconText}>Inicio</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Categories')} style={styles.iconContainer}>
-          <Icon name="list" size={30} color="#000" />
-          <Text style={styles.iconText}>Categorías</Text>
+          <Icon name="list" size={28} color="white" />
+          <Text style={styles.iconText}>Contenido</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Reviews')} style={styles.iconContainer}>
-          <Icon name="star" size={30} color="#000" />
+
+        <TouchableOpacity onPress={() => navigation.navigate('Game')} style={styles.iconContainer}>
+          <Icon name="game-controller-outline" size={28} color="white" />
+          <Text style={styles.iconText}>Jugar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Progreso')} style={styles.iconContainer}>
+          <Icon name="star" size={28} color="white" />
           <Text style={styles.iconText}>Progreso</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.iconContainer}>
-          <Icon name="person" size={30} color="#17B559" />
-          <Text style={[styles.iconText, { color: '#17B559' }]}>Perfil</Text>
+          <Icon name="person" size={28} color="white" />
+          <Text style={styles.iconText}>Perfil</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -83,10 +92,10 @@ const ProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#CCCCCC',
   },
   header: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#056C6B',
     padding: 20,
     alignItems: 'center',
     borderBottomWidth: 1,
@@ -95,7 +104,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#000',
+    color: 'white',
   },
   profileContainer: {
     alignItems: 'center',
@@ -113,7 +122,7 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 22,
     fontWeight: 'bold',
-    color: '#333',
+    color: 'black',
     marginBottom: 5,
   },
   profileEmail: {
@@ -130,12 +139,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#EDEDED',
+    borderBottomColor: 'gray',
   },
   optionText: {
     fontSize: 18,
     marginLeft: 10,
-    color: '#333',
+    color: 'black',
   },
   bottomIconsContainer: {
     flexDirection: 'row',
@@ -143,7 +152,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderTopWidth: 1,
     borderTopColor: '#EDEDED',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#4DBEA2',
     position: 'absolute',
     bottom: 0,
     width: '100%',
@@ -153,7 +162,7 @@ const styles = StyleSheet.create({
   },
   iconText: {
     fontSize: 12,
-    color: 'black',
+    color: 'white',
     marginTop: 5,
   },
 });

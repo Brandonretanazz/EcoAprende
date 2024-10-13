@@ -1,26 +1,22 @@
-// firebaseConfig.js
-
-import { initializeApp } from 'firebase/app';
+// services/firebaseConfig.js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "Apikey",
-  authDomain: "ecoaprende-7640a.firebaseapp.com",
-  projectId: "ecoaprende-7640a",
-  storageBucket: "ecoaprende-7640a.appspot.com",
-  messagingSenderId: "884869259260",
-  appId: "1:884869259260:web:23fd0f426683e42465dc79",
+  apiKey: "AIzaSyB65yUQObU78heky9xlCyZ9UTDygO5yBiM",
+  authDomain: "ecoaprende-d7127.firebaseapp.com",
+  projectId: "ecoaprende-d7127",
+  storageBucket: "ecoaprende-d7127.appspot.com",
+  messagingSenderId: "15640618422",
+  appId: "1:15640618422:web:39277260cb8ef0f0bd4d17",
   measurementId: "G-98ZR659HL4"
 };
 
-
+// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
+// Inicializa y exporta Auth
+const auth = getAuth(app);
 
-
-<<<<<<< Updated upstream
-export { auth };
-=======
-export const firestore = getFirestore(app);
-export const auth = getAuth(app);
->>>>>>> Stashed changes
+export { auth, firestore};

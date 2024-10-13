@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/image.jpg')} // Ruta de la imagen
+        source={require('../assets/image.png')} // Ruta de la imagen
         style={styles.logo}
       />
       <TextInput
@@ -28,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={setEmail}
         keyboardType="email-address"
         style={[styles.input, styles.emailInput]}
-        placeholderTextColor="#A0A0A0" // Color del texto del placeholder
+        placeholderTextColor="#FFFFFF" // Color del texto del placeholder
       />
       <TextInput
         placeholder="INGRESE CONTRASEÑA"
@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={setPassword}
         secureTextEntry
         style={[styles.input, styles.passwordInput]}
-        placeholderTextColor="#A0A0A0" // Color del texto del placeholder
+        placeholderTextColor="#FFFFFF" // Color del texto del placeholder
       />
       <TouchableOpacity onPress={handleLogin} style={[styles.button, styles.darkGreenButton]}>
         <Text style={styles.buttonText}>Entrar</Text>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: '#3C553E',
+    backgroundColor: '#CCCCCC',
   },
   logo: {
     width: 380,
@@ -82,10 +82,10 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   emailInput: {
-    backgroundColor: '#29382E',
+    backgroundColor: '#999999',
   },
   passwordInput: {
-    backgroundColor: '#29382E',
+    backgroundColor: '#999999',
   },
   button: {
     width: '80%',
@@ -96,10 +96,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   darkGreenButton: {
-    backgroundColor: '#17B559',
+    backgroundColor: '#056B6C',
   },
   buttonText: {
-    color: 'black',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -108,19 +108,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   newUserText: {
-    color: '#A0A0A0',
+    color: 'black',
     marginTop: 20,
     marginBottom: 20,
     textAlign: 'center',
   },
   forgotPasswordText: {
-    color: '#A0A0A0',
+    color: 'black',
     marginTop: 10,
     marginBottom: 20,
     textAlign: 'center',
+    
   },
   footerText: {
-    color: '#A0A0A0',
+    color: 'black',
     textAlign: 'center',
     position: 'relative',
     bottom: -40,
